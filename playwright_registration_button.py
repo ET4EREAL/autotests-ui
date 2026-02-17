@@ -18,5 +18,4 @@ with sync_playwright() as playwright:
     password_input = page.get_by_test_id('registration-form-password-input').locator('input')
     password_input.fill("password")
 
-
     expect(registration_button).not_to_be_disabled()
