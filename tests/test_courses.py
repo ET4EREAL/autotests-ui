@@ -19,7 +19,7 @@ def test_empty_courses_list(courses_list_page: CoursesListPage):
 def test_create_course(create_course_page: CreateCoursePage, courses_list_page: CoursesListPage):
     create_course_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
     create_course_page.create_course_toolbar_view.check_visible()
-    create_course_page.image_upload_widget.check_visible(is_image_uploaded=False)
+    create_course_page.image_upload_widget.check_visible(identifier='create-course-preview', is_image_uploaded=False)
     create_course_page.create_course_form.check_visible(
         title="",
         description="",
@@ -30,8 +30,8 @@ def test_create_course(create_course_page: CreateCoursePage, courses_list_page: 
     create_course_page.create_course_exercises_toolbar_view.check_visible()
     create_course_page.check_exercises_empty_view_visible()
 
-    create_course_page.image_upload_widget.upload_preview_image('./testdata/files/image.png')
-    create_course_page.image_upload_widget.check_visible(is_image_uploaded=True)
+    create_course_page.image_upload_widget.upload_preview_image(identifier='create-course-preview', file='./testdata/files/image.png')
+    create_course_page.image_upload_widget.check_visible(identifier='create-course-preview', is_image_uploaded=True)
 
     create_course_page.create_course_form.fill(
         title="Playwright",

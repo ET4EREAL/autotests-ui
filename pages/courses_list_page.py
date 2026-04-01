@@ -33,6 +33,7 @@ class CoursesListPage(BasePage):
 
     def check_visible_empty_view(self):
         self.empty_view.check_visible(
+            identifier='courses-list',
             title='There is no results',
             description='Results from the load test pipeline will be displayed here'
         )
