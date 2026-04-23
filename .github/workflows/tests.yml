@@ -51,7 +51,7 @@ jobs:
 
   job_2:
     name: publish-report
-    needs: jobs_1
+    needs: job_1
     runs-on: ubuntu-latest
 
     steps:
