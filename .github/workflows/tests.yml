@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  jobs_1:
+  job_1:
     name: run-tests
     runs-on: ubuntu-latest
 
@@ -49,9 +49,9 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
 
-  jobs_2:
+  job_2:
     name: publish-report
-    needs: job_1
+    needs: jobs_1
     runs-on: ubuntu-latest
 
     steps:
